@@ -13,10 +13,10 @@ from .consultation_panel import ConsultationPanel
 from ..utils.ui_components import FacultyCard
 from ..ui.pooled_faculty_card import get_faculty_card_manager
 from ..utils.ui_performance import (
-from ..services.mqtt_service import AsyncMQTTService # Added for MQTT service
     get_ui_batcher, get_widget_state_manager, SmartRefreshManager,
     batch_ui_update, timed_ui_update
 )
+from ..services.async_mqtt_service import AsyncMQTTService # Added for MQTT service
 
 # Set up logging
 logger = logging.getLogger(__name__)
