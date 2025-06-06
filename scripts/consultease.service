@@ -1,0 +1,31 @@
+[Unit]
+Description=ConsultEase Central System
+After=network.target postgresql.service mosquitto.service
+Wants=postgresql.service mosquitto.service
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/ConsultEase
+ExecStart=/usr/bin/python3 central_system/main.py
+Restart=on-failure
+RestartSec=5
+Environment=DISPLAY=:0
+Environment=XAUTHORITY=/home/pi/.Xauthority
+Environment=CONSULTEASE_KEYBOARD=squeekboard
+Environment=PYTHONUNBUFFERED=1
+Environment=MQTT_USERNAME=consultease_user
+Environment=MQTT_PASSWORD=consultease_secure_password
+Environment=CONSULTEASE_FULLSCREEN=true
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+
+# Security
+ProtectSystem=full
+PrivateTmp=true
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,7 @@
+PyQt5==5.15.9
+paho-mqtt==2.2.1
+sqlalchemy==2.0.23
+psycopg2-binary==2.9.9
+evdev==1.6.1
+PyQtWebEngine==5.15.6
+bcrypt==4.0.1
